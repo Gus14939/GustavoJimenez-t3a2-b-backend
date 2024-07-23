@@ -26,7 +26,15 @@ dbApp.use(express.json());
 dbApp.use(express.urlencoded({extended: true}));
 
 
-const dbURL = "";
+dbApp.get("/", (req, res) => {
+    res.json({
+        message: "Planthora is AAAALIVE!!"
+    });
+});
+
+const { routerUser } = require("./controllers/UserRouter.js");
+dbApp.use("/profile", routerUser);
+
 
 dbApp.get("/dbHealth", (request, response) => {
     let databaseState = mongoose.connection.readyState;
@@ -42,11 +50,6 @@ dbApp.get("/dbHealth", (request, response) => {
     })
 });
 
-dbApp.get("/", (req, res) => {
-    res.json({
-        message: "Planthora is AAAALIVE!!"
-    });
-});
 
 
 // Server crash
