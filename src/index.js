@@ -1,7 +1,11 @@
 // import from server.js
-const { planthoraApp, PORT, HOST } = require("./server");
+const { dbApp } = require("./server");
+const { dbConnect } = require("./database");
+
+
 
 // Run server
-planthoraApp.listen(PORT, HOST, () => {
-    console.log(`Planthora App is running on ${HOST}:${PORT}`);
+dbApp.listen(3000, () => {
+    dbConnect();
+    console.log(`Planthora App is running`);
 });

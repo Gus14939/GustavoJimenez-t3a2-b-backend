@@ -1,14 +1,12 @@
 // call the .env
 const dotenv = require("dotenv");
+const { default: mongoose } = require("mongoose");
+const express = require("express");
+
 dotenv.config();
 
-// Import express 
-const express = require("express");
-const planthoraApp = express();
-
-// process.env
-const HOST = process.env.HOST || 'localhost';
-const PORT = process.env.PORT || 3000;
+// Instance express server
+const dbApp = express();
 
 /*
 :::::::::::::::::::::::
@@ -19,24 +17,49 @@ const PORT = process.env.PORT || 3000;
 //     origin: ["http://localhost:5000", "https://deployedApp.com"],
 //     optionsSuccessStatus: 200
 // }
-// planthoraApp.use(cors(corsOptions));
+// dbApp.use(cors(corsOptions));
 :::::::::::::::::::::::::
 */
 
 // API request data using json
-planthoraApp.use(express.json());
-planthoraApp.use(express.urlencoded({extended: true}));
+dbApp.use(express.json());
+dbApp.use(express.urlencoded({extended: true}));
 
-planthoraApp.get("/", (req, res) => {
+
+const dbURL = "";
+
+dbApp.get("/dbHealth", (request, response) => {
+    let databaseState = mongoose.connection.readyState;
+    let databaseName = mongoose.connection.name;
+    let databaseModels = mongoose.connection.modelNames();
+    let databaseHost = mongoose.connection.host;
+
+    response.json({
+        readyState: databaseState,
+        dbName: databaseName,
+        dbModels: databaseModels,
+        dbHost: databaseHost
+    })
+});
+
+dbApp.get("/", (req, res) => {
     res.json({
         message: "Planthora is AAAALIVE!!"
     });
 });
 
 
+// Server crash
+dbApp.use((error, req, res, next) => {
+    res.status(500).json({
+        message: "An error occured in the server.",
+        error: error.message
+    });
+});
+
 // Keep at the end
 // non-existent pages
-planthoraApp.get("*", (req, res) => {
+dbApp.get("*", (req, res) => {
     res.status(404).json({
         message: "This URL path does not exist",
         pagePath: `${req.path}`
@@ -44,7 +67,5 @@ planthoraApp.get("*", (req, res) => {
 });
 
 module.exports = {
-    HOST,
-    PORT,
-    planthoraApp
+    dbApp
 };
