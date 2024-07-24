@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 async function dbConnect(){
-    let dbURL = process.env.dbURL || "mongodb://localhost:27017/planthoraDB";
+    let dbURL = process.env.DATABASE_URL || "mongodb://localhost:27017/planthoraDB";
     await mongoose.connect(dbURL);
     console.log("Database connection completed");
 };

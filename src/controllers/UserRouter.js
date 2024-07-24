@@ -1,15 +1,18 @@
 const express = require("express");
-const { User } = require("../models/UserModel");
-const routerUser = express.Router();
+const userModel = require("../models/UserModel");
+const userRouter = express.Router();
 
-routerUser.get("/", async (req, res) => {
+userRouter.get("/", async (req, res) => {
+    let result = await userModel.find({});
+    
     res.json({
         message: "Viewing profiles",
+        data: result
     });
 });
 
-routerUser.get("/:id", async (req, res) => {
-    let result = await User.findById(req.params.id).exec();
+userRouter.get("/:id", async (req, res) => {
+    let result = await userModel.findById(req.params.id);
 
     res.json({
         message: "Viewing profile by id",
@@ -17,20 +20,23 @@ routerUser.get("/:id", async (req, res) => {
     });
 });
 
-routerUser.post("/", (req, res) => {
+userRouter.post("/", async (req, res) => {
+    let result = await userModel.create(req.body);
+
     res.json({
-        message: "Creating profile"
+        message: "Creating profile",
+        data: result
     });
 });
 
-routerUser.patch("/:id", (req, res) => {
+userRouter.patch("/:id", (req, res) => {
     res.json({
         message: "Updating profile"
     });
 });
 
-routerUser.delete("/:id", async (req, res) => {
-    let result = await User.findByIdAndDelete(req.params.id).exec();
+userRouter.delete("/:id", async (req, res) => {
+    let result = await userModel.findByIdAndDelete(req.params.id);
 
     res.json({
         message: "Delete profile with",
@@ -39,6 +45,4 @@ routerUser.delete("/:id", async (req, res) => {
     });
 });
 
-module.exports = {
-    routerUser    
-}
+module.exports = userRouter

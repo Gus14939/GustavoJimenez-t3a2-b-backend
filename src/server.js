@@ -32,8 +32,8 @@ dbApp.get("/", (req, res) => {
     });
 });
 
-const { routerUser } = require("./controllers/UserRouter.js");
-dbApp.use("/profile", routerUser);
+const userRouter = require("./controllers/UserRouter.js");
+dbApp.use("/profile", userRouter);
 
 
 dbApp.get("/dbHealth", (request, response) => {
