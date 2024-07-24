@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
+    user:{
+        // replaced with Mongoose Obj ID from User
+        // type: { type: mongoose.Types.ObjectId, ref: 'User_Model' },
+        type: { type: mongoose.Schema.Types.ObjectId, ref: 'User_Model' },
+        require: true
+    },
     title: {
         type: String,
         required: true
@@ -34,8 +40,14 @@ const PostSchema = new mongoose.Schema({
         require: true
 
     }
+},
+{
+    timestamps: true
 });
 
-const postModel = mongoose.model('Post', PostSchema);
+const postModel = mongoose.model('Post_Model', postSchema);
 
-module.exports = { postModel };
+module.exports = { 
+    postModel, 
+    postSchema
+ };

@@ -35,7 +35,7 @@ dbApp.get("/", (req, res) => {
 const userRouter = require("./controllers/UserRouter.js");
 dbApp.use("/profile", userRouter);
 
-
+// Server Health Details
 dbApp.get("/dbHealth", (request, response) => {
     let databaseState = mongoose.connection.readyState;
     let databaseName = mongoose.connection.name;
@@ -50,9 +50,7 @@ dbApp.get("/dbHealth", (request, response) => {
     })
 });
 
-
-
-// Server crash
+// Server Crash
 dbApp.use((error, req, res, next) => {
     res.status(500).json({
         message: "An error occured in the server.",
@@ -61,7 +59,7 @@ dbApp.use((error, req, res, next) => {
 });
 
 // Keep at the end
-// non-existent pages
+// Non-Existent Pages
 dbApp.get("*", (req, res) => {
     res.status(404).json({
         message: "This URL path does not exist",
@@ -69,6 +67,8 @@ dbApp.get("*", (req, res) => {
     });
 });
 
+
+// Export dbAPP
 module.exports = {
     dbApp
 };

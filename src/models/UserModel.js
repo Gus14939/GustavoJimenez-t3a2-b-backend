@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const { tradeHistorySchema } = require("./TradeHistoryModel");
+const { wishlistSchema } = require("./WishlistModel");
 
 const userSchema = new mongoose.Schema({
 
@@ -20,12 +22,16 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    password: String,
+    password:  {
+        type: String,
+        required: true,
+        unique: false
+    },
     address: {
-        // I may just need the postcode/suburb to give an idea of the location, the suer may want to personally share his/her address in personal messages
+        // I may just need the postcode/suburb to give an idea of the location, the user may want to personally share his/her address in personal messages
         // street: String,
         suburb:  {
-            type: Number,
+            type: String,
             required: true
         },
         postcode:  {
@@ -34,37 +40,43 @@ const userSchema = new mongoose.Schema({
         },
         // state: String,
     },
-    favplant: {
+    favouritePlant: {
         type: String,
         required: false,
         unique: false
     },
+
     /////////// linked dbs
+
     posts: {
-        type: [String]      // replace with Mongoose Obj ID
+        // replaced with Mongoose Obj ID from Post
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post_Model' }]
     },
     wishlist: {
-        type: [String]      // replace with Mongoose Obj ID
+        // replaced with Mongoose Obj ID from Wishlist
+        // type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Wishlist_Model' }]
+        type: [wishlistSchema],
+        required: false
     },
-    tradehistory: {
-        type: [{
-            user: String,
-            timestamp: Date
-        }]      // replace with Mongoose Obj ID
+    trades: {
+        // replaced with Mongoose Obj ID from TradeHistory
+        type: [tradeHistorySchema],
+        required: true
     },
-    messages: {             // replace with Mongoose Obj ID
-        username:{
-            type: [String]  // replace with Mongoose Obj ID
-        },
-        message:{
-            type: [String]
-        },
+
+    // messages may be implemented if time allows for it
+    messages: {    
+        // replaced with Mongoose Obj ID from Messages
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Messages_Model' }]
     }
 },
 {
     timestamps: true
 });
 
-const userModel = mongoose.model('User', userSchema);
+const userModel = mongoose.model('User_Model', userSchema);
 
-module.exports = userModel;
+module.exports = {
+    userModel,
+    userSchema
+};

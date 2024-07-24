@@ -1,10 +1,11 @@
 const express = require("express");
-const userModel = require("../models/UserModel");
+const { userModel } = require("../models/UserModel");
 const userRouter = express.Router();
 
 userRouter.get("/", async (req, res) => {
     let result = await userModel.find({});
     
+    console.log(result)
     res.json({
         message: "Viewing profiles",
         data: result
