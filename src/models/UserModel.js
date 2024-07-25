@@ -29,7 +29,6 @@ const userSchema = new mongoose.Schema({
     },
     address: {
         // I may just need the postcode/suburb to give an idea of the location, the user may want to personally share his/her address in personal messages
-        // street: String,
         suburb:  {
             type: String,
             required: true
@@ -37,8 +36,7 @@ const userSchema = new mongoose.Schema({
         postcode:  {
             type: Number,
             required: true
-        },
-        // state: String,
+        }
     },
     favouritePlant: {
         type: String,
@@ -61,7 +59,7 @@ const userSchema = new mongoose.Schema({
     trades: {
         // replaced with Mongoose Obj ID from TradeHistory
         type: [tradeHistorySchema],
-        required: true
+        required: false
     },
 
     // messages may be implemented if time allows for it

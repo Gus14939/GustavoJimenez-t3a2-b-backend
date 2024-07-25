@@ -1,0 +1,112 @@
+[
+    {
+        "name": "Jake",
+        "lastname": "White",
+        "username": "Jakowhito",
+        "email": "jake.white@email.com",
+        "password": "NewPaasss",
+        "address": {
+            "suburb": "Neutral Bay",
+            "postcode": 2089
+        }
+    },
+    {
+        "name": "Emma",
+        "lastname": "Smith",
+        "username": "EmzSmith",
+        "email": "emma.smith@email.com",
+        "password": "abcdef",
+        "address": {
+            "suburb": "Bondi Beach",
+            "postcode": 2026
+        }
+    },
+    {
+        "name": "Liam",
+        "lastname": "Johnson",
+        "username": "LiamJ",
+        "email": "liam.johnson@email.com",
+        "password": "123456",
+        "address": {
+            "suburb": "Manly",
+            "postcode": 2095
+        }
+    },
+    {
+        "name": "Ava",
+        "lastname": "Williams",
+        "username": "AvaWill",
+        "email": "ava.williams@email.com",
+        "password": "password",
+        "address": {
+            "suburb": "Paddington",
+            "postcode": 2021
+        }
+    },
+    {
+        "name": "Noah",
+        "lastname": "Brown",
+        "username": "NoahB",
+        "email": "noah.brown@email.com",
+        "password": "12345678",
+        "address": {
+            "suburb": "Newtown",
+            "postcode": 2042
+        }
+    },
+    {
+        "name": "Sophia",
+        "lastname": "Jones",
+        "username": "SophiaJ",
+        "email": "sophia.jones@email.com",
+        "password": "qwerty",
+        "address": {
+            "suburb": "Surry Hills",
+            "postcode": 2010
+        }
+    },
+    {
+        "name": "Mason",
+        "lastname": "Garcia",
+        "username": "MasonG",
+        "email": "mason.garcia@email.com",
+        "password": "password123",
+        "address": {
+            "suburb": "Redfern",
+            "postcode": 2016
+        }
+    },
+    {
+        "name": "Isabella",
+        "lastname": "Martinez",
+        "username": "BellaM",
+        "email": "isabella.martinez@email.com",
+        "password": "ilovepets",
+        "address": {
+            "suburb": "Manly Vale",
+            "postcode": 2093
+        }
+    },
+    {
+        "name": "James",
+        "lastname": "Rodriguez",
+        "username": "JamesR",
+        "email": "james.rodriguez@email.com",
+        "password": "admin123",
+        "address": {
+            "suburb": "Woollahra",
+            "postcode": 2025
+        }
+    },
+    {
+        "name": "Charlotte",
+        "lastname": "Martinez",
+        "username": "CharlieM",
+        "email": "charlotte.martinez@email.com",
+        "password": "qwertyui",
+        "address": {
+            "suburb": "Coogee",
+            "postcode": 2034
+        }
+    }
+]

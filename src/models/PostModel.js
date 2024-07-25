@@ -4,8 +4,9 @@ const postSchema = new mongoose.Schema({
     user:{
         // replaced with Mongoose Obj ID from User
         // type: { type: mongoose.Types.ObjectId, ref: 'User_Model' },
-        type: { type: mongoose.Schema.Types.ObjectId, ref: 'User_Model' },
-        require: true
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User_Model',
+        require: false
     },
     title: {
         type: String,
