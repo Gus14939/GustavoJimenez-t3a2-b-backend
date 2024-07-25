@@ -1,0 +1,204 @@
+[
+    {
+        "title": "I want to swap my Monstera",
+        "plantName": "Monstera deliciosa Liebm",
+        "description": "I have too many Monsteras at home, I'd like to swap it for any kind of mid-size cactus.",
+        "category": {
+            "free": false,
+            "swap": true,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Free Aloe Vera Plant",
+        "plantName": "Aloe vera",
+        "description": "Giving away a healthy Aloe Vera plant. Come pick it up!",
+        "category": {
+            "free": true,
+            "swap": false,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Looking to Swap Succulents",
+        "plantName": "Various Succulents",
+        "description": "Interested in swapping succulents. Have a variety to offer!",
+        "category": {
+            "free": false,
+            "swap": true,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Wanted: Rare Ferns",
+        "plantName": "Fern",
+        "description": "Looking to acquire rare ferns for my collection. Let me know if you have any to swap or sell.",
+        "category": {
+            "free": false,
+            "swap": false,
+            "wanted": true
+        }
+    },
+    {
+        "title": "Free Spider Plant",
+        "plantName": "Chlorophytum comosum",
+        "description": "Giving away a healthy Spider Plant. It's easy to care for and perfect for beginners.",
+        "category": {
+            "free": true,
+            "swap": false,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Swap My Snake Plant",
+        "plantName": "Sansevieria trifasciata",
+        "description": "Looking to swap my Snake Plant for another interesting indoor plant.",
+        "category": {
+            "free": false,
+            "swap": true,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Wanted: Rare Cacti",
+        "plantName": "Opuntia Cactaceae",
+        "description": "Seeking rare cacti for my collection. Open to swaps or purchase.",
+        "category": {
+            "free": false,
+            "swap": false,
+            "wanted": true
+        }
+    },
+    {
+        "title": "Free Succulent Cuttings",
+        "plantName": "Various Succulents",
+        "description": "Have plenty of succulent cuttings to give away. Perfect for propagation.",
+        "category": {
+            "free": true,
+            "swap": false,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Swap My Peace Lily",
+        "plantName": "Spathiphyllum",
+        "description": "Wanting to swap my Peace Lily for a different indoor plant. Let me know if interested!",
+        "category": {
+            "free": false,
+            "swap": true,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Wanted: Rare Orchids",
+        "plantName": "Orchidaceae",
+        "description": "Searching for rare orchids to add to my collection. Let’s discuss a swap or sale.",
+        "category": {
+            "free": false,
+            "swap": false,
+            "wanted": true
+        }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+        "title": "Looking to Swap Succulents",
+        "plantName": "Crassula ovata",
+        "description": "Interested in swapping succulents. Have a variety to offer!",
+        "category": {
+            "free": false,
+            "swap": true,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Free Aloe Vera Plant",
+        "plantName": "Aloe vera",
+        "description": "Giving away a healthy Aloe Vera plant. Come pick it up!",
+        "category": {
+            "free": true,
+            "swap": false,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Wanted: Rare Ferns",
+        "plantName": "Fern",
+        "description": "Looking to acquire rare ferns for my collection. Let me know if you have any to swap or sell.",
+        "category": {
+            "free": false,
+            "swap": false,
+            "wanted": true
+        }
+    },
+    {
+        "title": "Free Spider Plant",
+        "plantName": "Chlorophytum comosum",
+        "description": "Giving away a healthy Spider Plant. It's easy to care for and perfect for beginners.",
+        "category": {
+            "free": true,
+            "swap": false,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Swap My Snake Plant",
+        "plantName": "Sansevieria trifasciata",
+        "description": "Looking to swap my Snake Plant for another interesting indoor plant.",
+        "category": {
+            "free": false,
+            "swap": true,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Wanted: Rare Cacti",
+        "plantName": "Various Cacti",
+        "description": "Seeking rare cacti for my collection. Open to swaps or purchase.",
+        "category": {
+            "free": false,
+            "swap": false,
+            "wanted": true
+        }
+    },
+    {
+        "title": "Free Succulent Cuttings",
+        "plantName": "Various Succulents",
+        "description": "Have plenty of succulent cuttings to give away. Perfect for propagation.",
+        "category": {
+            "free": true,
+            "swap": false,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Swap My Peace Lily",
+        "plantName": "Spathiphyllum",
+        "description": "Wanting to swap my Peace Lily for a different indoor plant. Let me know if interested!",
+        "category": {
+            "free": false,
+            "swap": true,
+            "wanted": false
+        }
+    },
+    {
+        "title": "Wanted: Rare Orchids",
+        "plantName": "Orchidaceae",
+        "description": "Searching for rare orchids to add to my collection. Let’s discuss a swap or sale.",
+        "category": {
+            "free": false,
+            "swap": false,
+            "wanted": true
+        }
+    }
+]

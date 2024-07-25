@@ -4,9 +4,14 @@ const postSchema = new mongoose.Schema({
     user:{
         // replaced with Mongoose Obj ID from User
         // type: { type: mongoose.Types.ObjectId, ref: 'User_Model' },
+        // type: mongoose.Schema.Types.ObjectId, 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User_Model',
-        require: false
+        require: true
+    },
+    username: {
+        type: String,
+        required: true
     },
     title: {
         type: String,
@@ -14,7 +19,7 @@ const postSchema = new mongoose.Schema({
     },
     // this has to be searched and match with the API
     // this name will bring the image of the plant
-    nameofplant: {
+    plantName: {
         type: String, // from API
         required: true
     }, 
@@ -35,11 +40,7 @@ const postSchema = new mongoose.Schema({
         wanted: {
             type: Boolean,
             default: false
-        },
-        // Could I use enum?
-        enum:["free", "swap", "wanted"],
-        require: true
-
+        }
     }
 },
 {

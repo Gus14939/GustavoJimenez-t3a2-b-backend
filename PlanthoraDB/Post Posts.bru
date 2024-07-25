@@ -1,0 +1,27 @@
+meta {
+  name: Post Posts
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3000/profile/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Gus2",
+    "lastname": "Jimo",
+    "username": "Gussio2",
+    "email": "Gus2@email.com",
+    "password": "123456",
+    "address": {
+        "suburb": "Neutral bay",
+        "postcode": 2089
+    },
+    "favplant": "Monstera"
+  }
+  
+}
