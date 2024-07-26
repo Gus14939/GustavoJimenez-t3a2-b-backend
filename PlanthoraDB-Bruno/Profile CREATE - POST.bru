@@ -1,27 +1,27 @@
 meta {
-  name: Post Posts
+  name: Profile CREATE - POST
   type: http
-  seq: 3
+  seq: 2
 }
 
 post {
-  url: http://localhost:3000/profile/
+  url: http://localhost:3000/profiles
   body: json
   auth: none
 }
 
 body:json {
   {
-    "name": "Gus2",
+    "name": "Gus",
     "lastname": "Jimo",
-    "username": "Gussio2",
-    "email": "Gus2@email.com",
+    "username": "Gussio",
+    "email": "Gus@email.com",
     "password": "123456",
     "address": {
         "suburb": "Neutral bay",
         "postcode": 2089
     },
-    "favplant": "Monstera"
+    "favouritePlant": "Monstera"
   }
   
 }

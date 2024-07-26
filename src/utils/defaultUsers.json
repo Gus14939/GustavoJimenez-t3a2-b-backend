@@ -8,7 +8,8 @@
         "address": {
             "suburb": "Neutral Bay",
             "postcode": 2089
-        }
+        },
+        "favouritePlant": "Aloe vera"
     },
     {
         "name": "Emma",
@@ -19,7 +20,8 @@
         "address": {
             "suburb": "Bondi Beach",
             "postcode": 2026
-        }
+        },
+        "favouritePlant": "Succulents"
     },
     {
         "name": "Liam",
@@ -30,7 +32,8 @@
         "address": {
             "suburb": "Manly",
             "postcode": 2095
-        }
+        },
+        "favouritePlant": "Any Ferns"
     },
     {
         "name": "Ava",
@@ -41,7 +44,8 @@
         "address": {
             "suburb": "Paddington",
             "postcode": 2021
-        }
+        },
+        "favouritePlant": "Sansevieria trifasciata"
     },
     {
         "name": "Noah",
@@ -63,7 +67,8 @@
         "address": {
             "suburb": "Surry Hills",
             "postcode": 2010
-        }
+        },
+        "favouritePlant": null
     },
     {
         "name": "Mason",
@@ -74,7 +79,8 @@
         "address": {
             "suburb": "Redfern",
             "postcode": 2016
-        }
+        },
+        "favouritePlant": "Spathiphyllum"
     },
     {
         "name": "Isabella",
@@ -85,7 +91,9 @@
         "address": {
             "suburb": "Manly Vale",
             "postcode": 2093
-        }
+        },
+        "favouritePlant": "Fern"
+
     },
     {
         "name": "James",
@@ -96,7 +104,8 @@
         "address": {
             "suburb": "Woollahra",
             "postcode": 2025
-        }
+        },
+        "favouritePlant": null
     },
     {
         "name": "Charlotte",
@@ -107,6 +116,7 @@
         "address": {
             "suburb": "Coogee",
             "postcode": 2034
-        }
+        },
+        "favouritePlant": null
     }
 ]

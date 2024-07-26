@@ -33,7 +33,7 @@ dbApp.get("/", (req, res) => {
 });
 
 const userRouter = require("./controllers/UserRouter.js");
-dbApp.use("/profile", userRouter);
+dbApp.use("/profiles", userRouter);
 
 // Server Health Details
 dbApp.get("/dbHealth", (request, response) => {
@@ -50,13 +50,6 @@ dbApp.get("/dbHealth", (request, response) => {
     })
 });
 
-// Server Crash
-dbApp.use((error, req, res, next) => {
-    res.status(500).json({
-        message: "An error occured in the server.",
-        error: error.message
-    });
-});
 
 // Keep at the end
 // Non-Existent Pages
@@ -67,6 +60,14 @@ dbApp.get("*", (req, res) => {
     });
 });
 
+
+// Server Crash
+dbApp.use((error, req, res, next) => {
+    res.status(error.status || 500).json({
+        message: "An error has occured!",
+        error: error.message
+    });
+});
 
 // Export dbAPP
 module.exports = {

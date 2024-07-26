@@ -2,9 +2,6 @@ const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
     user:{
-        // replaced with Mongoose Obj ID from User
-        // type: { type: mongoose.Types.ObjectId, ref: 'User_Model' },
-        // type: mongoose.Schema.Types.ObjectId, 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User_Model',
         require: true
@@ -18,9 +15,9 @@ const postSchema = new mongoose.Schema({
         required: true
     },
     // this has to be searched and match with the API
-    // this name will bring the image of the plant
+    // this name will ALSO bring the IMAGE of the plant from the API
     plantName: {
-        type: String, // from API
+        type: String, // aided with API
         required: true
     }, 
     //
@@ -47,9 +44,6 @@ const postSchema = new mongoose.Schema({
     timestamps: true
 });
 
-const postModel = mongoose.model('Post_Model', postSchema);
-
 module.exports = { 
-    postModel, 
     postSchema
  };

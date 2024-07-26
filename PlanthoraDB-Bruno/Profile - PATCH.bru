@@ -1,0 +1,25 @@
+meta {
+  name: Profile - PATCH
+  type: http
+  seq: 4
+}
+
+patch {
+  url: http://localhost:3000/profiles/66a373de56abcc41ba42bf03
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Gustavo",
+    "lastname": "Jimenez",
+    "password": "12345",
+    "address": {
+        "suburb": "Neutral bay",
+        "postcode": 2089
+    },
+    "favouritePlant": "Pothos"
+  }
+  
+}
