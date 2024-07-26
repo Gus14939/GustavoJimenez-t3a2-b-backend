@@ -1,16 +1,19 @@
 const mongoose = require("mongoose");
 
 const messagesSchema = new mongoose.Schema({
+    user:{
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User_Model',
+        require: true
+    },
     // have to link the user who's messaging
-    fromUser:{
-        // replaced with Mongoose Obj ID from User
-        // type: { type: mongoose.Types.ObjectId, ref: 'User_Model' }
-        type: String
-    },
-    message:{
-        type: [String],
-        required: true
-    },
+    // posts:{
+    //     type: [{
+    //         type: mongoose.Schema.Types.ObjectId, 
+    //         ref: 'Post_Model',
+    //         require: true
+    //     }]
+    // }
 },
 {
     timestamps: true

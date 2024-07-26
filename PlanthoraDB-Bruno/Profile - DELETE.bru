@@ -1,0 +1,25 @@
+meta {
+  name: Profile - DELETE
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://localhost:3000/profiles/66a373de56abcc41ba42bf03
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Gustavo",
+    "lastname": "Jimenez",
+    "password": "12345",
+    "address": {
+        "suburb": "Neutral bay",
+        "postcode": 2089
+    },
+    "favouritePlant": "Pothos"
+  }
+  
+}

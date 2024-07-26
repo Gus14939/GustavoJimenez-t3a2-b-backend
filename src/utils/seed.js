@@ -22,8 +22,6 @@ async function seedPosts(userData) {
     const defaultPostsData_map = defaultPostsData.map((post, index) => {
         const randomUserDataId = Math.floor(Math.random() * (defaultUsersData.length))
         return {
-            // user: userData[0+index].id,
-            // username: userData[0+index].username,
             user: userData[randomUserDataId].id,
             username: userData[randomUserDataId].username,
             title: post.title,

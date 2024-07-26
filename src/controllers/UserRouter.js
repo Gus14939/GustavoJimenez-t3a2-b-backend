@@ -3,8 +3,9 @@ const { userModel, postModel } = require("../models/models");
 
 const userRouter = express.Router();
 
-userRouter.get("/", async (req, res) => {
-    let result = await userModel.find({}).populate("posts");
+// READ
+userRouter.get("/all", async (req, res) => {
+    let result = await userModel.find({});
     
     console.log(result)
     res.json({
@@ -14,16 +15,23 @@ userRouter.get("/", async (req, res) => {
 });
 
 userRouter.get("/:id", async (req, res) => {
-    let result = await userModel.findById(req.params.id).populate("posts");
+    let result = await userModel.findById(req.params.id);
 
     res.json({
         message: "Viewing profile by id",
         data: result
     });
 });
+// CREATE
+userRouter.post("/", async (req, res, next) => {
+    let result = await userModel.create(req.body).catch(error => {
+        error.status = 400;
+        return error;
+    });
 
-userRouter.post("/", async (req, res) => {
-    let result = await userModel.create(req.body);
+    if (result.errors) {
+        return next(result)
+    }
 
     res.json({
         message: "Creating profile",
@@ -31,12 +39,23 @@ userRouter.post("/", async (req, res) => {
     });
 });
 
-userRouter.patch("/:id", (req, res) => {
+// UPDATE
+userRouter.patch("/:id", async (req, res, next) => {
+    let result = await userModel.findByIdAndUpdate(
+		req.params.id, 
+		req.body,
+		{
+			returnDocument: "after"
+		}
+	);
+    
     res.json({
-        message: "Updating profile"
+        message: "Updating profile",
+        data: result
     });
 });
 
+// DELETE
 userRouter.delete("/:id", async (req, res) => {
     let result = await userModel.findByIdAndDelete(req.params.id);
 
