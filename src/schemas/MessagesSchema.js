@@ -4,7 +4,8 @@ const messagesSchema = new mongoose.Schema({
     // have to link the user who's messaging
     fromUser:{
         // replaced with Mongoose Obj ID from User
-        type: { type: mongoose.Types.ObjectId, ref: 'User_Model' }
+        // type: { type: mongoose.Types.ObjectId, ref: 'User_Model' }
+        type: String
     },
     message:{
         type: [String],
@@ -15,6 +16,6 @@ const messagesSchema = new mongoose.Schema({
     timestamps: true
 });
 
-const messagesModel = mongoose.model('Messages_Model', messagesSchema);
-
-module.exports = messagesModel;
+module.exports = {
+    messagesSchema
+};

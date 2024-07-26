@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const { tradeHistorySchema } = require("./TradeHistoryModel");
-const { wishlistSchema } = require("./WishlistModel");
+const { postSchema } = require("./PostSchema");
 
 const userSchema = new mongoose.Schema({
 
@@ -48,33 +47,37 @@ const userSchema = new mongoose.Schema({
 
     posts: {
         // replaced with Mongoose Obj ID from Post
-        type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post_Model' }]
+        // type: [postSchema]
+        type: [{type: mongoose.Schema.Types.ObjectId, ref: "Post_Model"}], 
+        // type: String,
+        required: true
     },
     wishlist: {
         // replaced with Mongoose Obj ID from Wishlist
         // type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Wishlist_Model' }]
-        type: [wishlistSchema],
+        // type: [wishlistSchema],
+        type: String,
         required: false
     },
     trades: {
         // replaced with Mongoose Obj ID from TradeHistory
-        type: [tradeHistorySchema],
+        // type: [tradeHistorySchema],
+        type: String,
         required: false
     },
 
     // messages may be implemented if time allows for it
     messages: {    
         // replaced with Mongoose Obj ID from Messages
-        type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Messages_Model' }]
+        // type: [{ type: mongoose.Types.ObjectId, ref: 'Messages_Model' }]
+        type: String,
     }
 },
 {
     timestamps: true
 });
 
-const userModel = mongoose.model('User_Model', userSchema);
 
 module.exports = {
-    userModel,
     userSchema
 };

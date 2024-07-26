@@ -33,7 +33,7 @@ dbApp.get("/", (req, res) => {
 });
 
 const userRouter = require("./controllers/UserRouter.js");
-dbApp.use("/profile", userRouter);
+dbApp.use("/profiles", userRouter);
 
 // Server Health Details
 dbApp.get("/dbHealth", (request, response) => {
