@@ -3,6 +3,9 @@
 const defaultUsersData = require('./defaultUsers.json')
 const defaultPostsData = require('./defaultPosts.json')
 
+// JWT
+const { comparePasswords, createJWT, vallidateJWT } = require('./authHelpers.js');
+
 // Import modes and schemas from models.js
 const { userModel, postModel } = require("../models/models.js")
 
@@ -10,15 +13,31 @@ const { userModel, postModel } = require("../models/models.js")
 // import database connect
 const { dbConnect, dbDisconnect, dbClear } = require("../database");
 
-async function seedUsers() {
-    let seed_defaultUsers = await userModel.insertMany(defaultUsersData);
 
-    console.log("seed_defaultUsers");
-    // console.log(seed_defaultUsers);
+async function seedUsers() {
+    const seed_defaultUsers = [];
+    for (let user = 0; user < defaultUsersData.length; user++) {
+        const eachUser = defaultUsersData[user];
+        
+        console.log(`save ${user}`);
+
+        let individual_defaultUser = await userModel.create(eachUser);
+        await individual_defaultUser.save();
+
+        console.log(`saves ${individual_defaultUser}`);
+        seed_defaultUsers.push(individual_defaultUser)
+    }
+
+    const jakeUser = seed_defaultUsers.find(user => user.username === 'Jakowhito');
+    console.log("Jakes pass is: " + jakeUser.password)
+    let jakesPass = await comparePasswords("123456", jakeUser.password)
+    console.log("jakes password is 12456: " + jakesPass)
+    
     return seed_defaultUsers;
 }
 
 async function seedPosts(userData) {
+    
     const defaultPostsData_map = defaultPostsData.map((post, index) => {
         const randomUserDataId = Math.floor(Math.random() * (defaultUsersData.length))
         return {
@@ -47,10 +66,11 @@ async function seed(){
     let newUsers = await seedUsers();
     let newPosts = await seedPosts(newUsers);
 
-    // let newUsersWithModelsData = await seedUsers(newPosts);
+    console.log("user used " + newUsers[0]._id);
+    let newJWT = createJWT(newUsers[0]._id);
+    console.log("new JWT: " + newJWT);
 
-    // let defaulUsers = await seedUsers();
-    // let defaulPosts = await seedPosts(defaulUsers);
+    vallidateJWT(newJWT);
 
     console.log("All Data seeded");
     // disconnect database
