@@ -5,21 +5,23 @@ meta {
 }
 
 patch {
-  url: http://localhost:3000/profiles/66a373de56abcc41ba42bf03
+  url: http://localhost:3000/posts/66a45b8e97109a84f10d28ca
   body: json
   auth: none
 }
 
 body:json {
   {
-    "name": "Gustavo",
-    "lastname": "Jimenez",
-    "password": "12345",
-    "address": {
-        "suburb": "Neutral bay",
-        "postcode": 2089
-    },
-    "favouritePlant": "Pothos"
+    "user": "66a45b8e97109a84f10d28ca",
+    "username": "CharlieM",
+    "title": "I want to swap my Monsterasss",
+    "plantName": "Monstera deliciosa Liebm",
+    "description": "I have too many Monsteras at home.",
+    "category": {
+        "free": false,
+        "swap": true,
+        "wanted": false
+    }
   }
   
 }

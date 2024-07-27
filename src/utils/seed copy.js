@@ -1,9 +1,10 @@
-// import default users to start with some interesting fake users
+// import default users and posts to
+// start with some interesting fake posts created by fake users
 const defaultUsersData = require('./defaultUsers.json')
 const defaultPostsData = require('./defaultPosts.json')
 
-const { userModel } = require("../models/UserModel.js")
-const { postModel } = require('../models/PostModel.js');
+// Import modes and schemas from models.js
+const { userModel, postModel } = require("../models/models.js")
 
 
 // import database connect
@@ -12,7 +13,8 @@ const { dbConnect, dbDisconnect, dbClear } = require("../database");
 async function seedUsers() {
     let seed_defaultUsers = await userModel.insertMany(defaultUsersData);
 
-    console.log(seed_defaultUsers);
+    console.log("seed_defaultUsers");
+    // console.log(seed_defaultUsers);
     return seed_defaultUsers;
 }
 
@@ -20,8 +22,6 @@ async function seedPosts(userData) {
     const defaultPostsData_map = defaultPostsData.map((post, index) => {
         const randomUserDataId = Math.floor(Math.random() * (defaultUsersData.length))
         return {
-            // user: userData[0+index].id,
-            // username: userData[0+index].username,
             user: userData[randomUserDataId].id,
             username: userData[randomUserDataId].username,
             title: post.title,
@@ -33,7 +33,8 @@ async function seedPosts(userData) {
 
     let seed_defaultPosts = await postModel.insertMany(defaultPostsData_map);
 
-    console.log(seed_defaultPosts);
+    console.log("seed_defaultPosts");
+    // console.log(seed_defaultPosts);
     return seed_defaultPosts;
 }
 
@@ -45,11 +46,13 @@ async function seed(){
 
     let newUsers = await seedUsers();
     let newPosts = await seedPosts(newUsers);
-    let newUsersWithModelsData = await seedUsers(newPosts);
+
+    // let newUsersWithModelsData = await seedUsers(newPosts);
+
     // let defaulUsers = await seedUsers();
     // let defaulPosts = await seedPosts(defaulUsers);
 
-    console.log("Data seeded");
+    console.log("All Data seeded");
     // disconnect database
     dbDisconnect();
 }
