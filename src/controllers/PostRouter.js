@@ -1,10 +1,10 @@
 const express = require("express");
 const { postModel } = require("../models/models");
 
-const userRouter = express.Router();
+const postRouter = express.Router();
 
 // READ
-userRouter.get("/", async (req, res) => {
+postRouter.get("/", async (req, res) => {
     let result = await postModel.find({});
     
     console.log(result)
@@ -14,7 +14,7 @@ userRouter.get("/", async (req, res) => {
     });
 });
 
-userRouter.get("/:id", async (req, res) => {
+postRouter.get("/:id", async (req, res) => {
     let result = await postModel.findById(req.params.id);
 
     res.json({
@@ -23,7 +23,7 @@ userRouter.get("/:id", async (req, res) => {
     });
 });
 // CREATE
-userRouter.post("/:id", async (req, res, next) => {
+postRouter.post("/:id", async (req, res, next) => {
     let result = await postModel.create(req.body).catch(error => {
         error.status = 400;
         return error;
@@ -40,7 +40,7 @@ userRouter.post("/:id", async (req, res, next) => {
 });
 
 // UPDATE
-userRouter.patch("/:id", async (req, res, next) => {
+postRouter.patch("/:id", async (req, res, next) => {
     let result = await postModel.findByIdAndUpdate(
 		req.params.id, 
 		req.body,
@@ -56,7 +56,7 @@ userRouter.patch("/:id", async (req, res, next) => {
 });
 
 // DELETE
-userRouter.delete("/:id", async (req, res) => {
+postRouter.delete("/:id", async (req, res) => {
     let result = await postModel.findByIdAndDelete(req.params.id);
 
     res.json({
@@ -66,4 +66,4 @@ userRouter.delete("/:id", async (req, res) => {
     });
 });
 
-module.exports = userRouter
+module.exports = postRouter
