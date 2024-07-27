@@ -32,8 +32,15 @@ dbApp.get("/", (req, res) => {
     });
 });
 
+
+// profile
 const userRouter = require("./controllers/UserRouter.js");
 dbApp.use("/profiles", userRouter);
+
+// post
+const postRouter = require("./controllers/PostRouter.js");
+dbApp.use("/posts", postRouter);
+
 
 // Server Health Details
 dbApp.get("/dbHealth", (request, response) => {

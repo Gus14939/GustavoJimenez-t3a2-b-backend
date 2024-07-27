@@ -1,0 +1,27 @@
+meta {
+  name: PlantPosts - CREATE
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3000/posts/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+     "_id": "66a45b0ceb0171625a9279a9",
+    "username": "CharlieM",
+    "title": "I want to swap my Monstera",
+    "plantName": "Monstera deliciosa Liebm",
+    "description": "I have too many Monsteras at home, I'd like to swap it for any kind of mid-size cactus",
+    "category": {
+        "free": false,
+        "swap": true,
+        "wanted": false
+    }
+  }
+  
+}
