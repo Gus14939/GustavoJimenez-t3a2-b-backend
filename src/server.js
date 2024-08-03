@@ -13,7 +13,8 @@ const dbApp = express();
 
 const cors = require('cors');
 var corsOptions = {
-    origin: ["http://localhost:3000", "https://deployedApp.com"],
+    origin: "*",
+    // origin: ["http://localhost:3000", "https://deployedApp.com"],
     optionsSuccessStatus: 200
 }
 dbApp.use(cors(corsOptions));
@@ -29,7 +30,7 @@ dbApp.get("/", (req, res) => {
         message: "Planthora is AAAALIVE!!"
     });
 });
-
+// ....
 
 // profile
 const userRouter = require("./controllers/UserRouter.js");
