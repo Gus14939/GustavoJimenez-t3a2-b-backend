@@ -13,7 +13,7 @@ const dbApp = express();
 
 const cors = require('cors');
 var corsOptions = {
-    origin: ["http://localhost:3333", "https://deployedApp.com"],
+    origin: ["http://localhost:3000", "https://deployedApp.com"],
     optionsSuccessStatus: 200
 }
 dbApp.use(cors(corsOptions));
