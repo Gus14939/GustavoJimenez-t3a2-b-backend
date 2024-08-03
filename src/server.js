@@ -2,6 +2,7 @@
 const dotenv = require("dotenv");
 const { default: mongoose } = require("mongoose");
 const express = require("express");
+const cors = require("cors")
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ const dbApp = express();
 // API request data using json
 dbApp.use(express.json());
 dbApp.use(express.urlencoded({extended: true}));
+dbApp.use(cors());
 
 
 dbApp.get("/", (req, res) => {
