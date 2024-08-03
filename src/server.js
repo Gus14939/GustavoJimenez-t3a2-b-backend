@@ -8,18 +8,16 @@ dotenv.config();
 // Instance express server
 const dbApp = express();
 
-/*
-:::::::::::::::::::::::
+
 // Check cors when interacting with the front-end
 
-// const cors = require('cors');
-// var corsOptions = {
-//     origin: ["http://localhost:5000", "https://deployedApp.com"],
-//     optionsSuccessStatus: 200
-// }
-// dbApp.use(cors(corsOptions));
-:::::::::::::::::::::::::
-*/
+const cors = require('cors');
+var corsOptions = {
+    origin: ["http://localhost:3333", "https://deployedApp.com"],
+    optionsSuccessStatus: 200
+}
+dbApp.use(cors(corsOptions));
+
 
 // API request data using json
 dbApp.use(express.json());
