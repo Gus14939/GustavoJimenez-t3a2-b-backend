@@ -26,6 +26,13 @@ const dbApp = express();
 dbApp.use(express.json());
 dbApp.use(express.urlencoded({extended: true}));
 dbApp.use(cors());
+dbApp.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+  });
+  
 
 
 dbApp.get("/", (req, res) => {
