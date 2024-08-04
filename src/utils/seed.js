@@ -39,14 +39,22 @@ async function seedUsers() {
 async function seedPosts(userData) {
     
     const defaultPostsData_map = defaultPostsData.map((post, index) => {
-        const randomUserDataId = Math.floor(Math.random() * (defaultUsersData.length))
+        const randomUserData_id = Math.floor(Math.random() * (defaultUsersData.length))
+        const randomUserData_username = Math.floor(Math.random() * (defaultUsersData.length))
         return {
-            user: userData[randomUserDataId].id,
-            username: userData[randomUserDataId].username,
+            postCreator: userData[randomUserData_id].id,
             title: post.title,
             plantName: post.plantName,
             description: post.description,
             category: post.category,
+            usersLikedPost: userData[randomUserData_username].id,// not required
+            //
+            // user: userData[randomUserData_id].id,
+            // username: userData[randomUserData_id].username,
+            // title: post.title,
+            // plantName: post.plantName,
+            // description: post.description,
+            // category: post.category,
         };
     });
 

@@ -5,7 +5,7 @@ const postSchema = new mongoose.Schema({
         // type: {type: mongoose.Schema.Types.ObjectId, ref: 'User_Model'}, this one break if no []
         type: mongoose.Schema.Types.ObjectId, ref: 'User_Model', // try this one
         required: true,
-        unique: true
+        unique: false // seems like for a user to create more than one post unique needs false
     },
     // username: {
     //     type: String,
@@ -42,7 +42,7 @@ const postSchema = new mongoose.Schema({
     },
     usersLikedPost: {
         type: [{type: mongoose.Schema.Types.ObjectId, ref: 'User_Model'}], // try this one
-        required: true,
+        required: false,
         unique: false
     }
 },
