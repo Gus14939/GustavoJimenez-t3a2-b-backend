@@ -2,15 +2,11 @@ const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
     postCreator: {
-        // type: {type: mongoose.Schema.Types.ObjectId, ref: 'User_Model'}, this one break if no []
-        type: mongoose.Schema.Types.ObjectId, ref: 'User_Model', // try this one
+        // type: {type: mongoose.Schema.Types.ObjectId, ref: 'User_Model'}, this one breaks if no []
+        type: mongoose.Schema.Types.ObjectId, ref: 'User_Model', // this one is correct
         required: true,
-        unique: false // seems like for a user to create more than one post unique needs false
+        unique: false // for a user to create more than one post. unique: needs to be false
     },
-    // username: {
-    //     type: String,
-    //     required: true
-    // },
     title: {
         type: String,
         required: true

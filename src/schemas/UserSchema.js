@@ -49,6 +49,11 @@ const userSchema = new mongoose.Schema({
         required: false,
         unique: false
     },
+    postsLiked: {
+        type: [{type: mongoose.Schema.Types.ObjectId, ref: 'Post_Model'}],
+        required: false,
+        unique: false
+    },
 },
 {
     timestamps: true
