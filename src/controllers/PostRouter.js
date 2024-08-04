@@ -5,7 +5,9 @@ const postRouter = express.Router();
 
 // READ
 postRouter.get("/", async (req, res) => {
-    let result = await postModel.find({});
+    let result = await  postModel.find({})
+                        .populate("postCreator", "username")
+                        .populate("usersLikedPost", "username");
     
     console.log(result)
     res.json({
