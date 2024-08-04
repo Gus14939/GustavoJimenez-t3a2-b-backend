@@ -1,15 +1,16 @@
 const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
-    user:{
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'User_Model',
-        require: true
+    postCreator: {
+        // type: {type: mongoose.Schema.Types.ObjectId, ref: 'User_Model'}, this one break if no []
+        type: mongoose.Schema.Types.ObjectId, ref: 'User_Model', // try this one
+        required: true,
+        unique: true
     },
-    username: {
-        type: String,
-        required: true
-    },
+    // username: {
+    //     type: String,
+    //     required: true
+    // },
     title: {
         type: String,
         required: true
@@ -38,6 +39,11 @@ const postSchema = new mongoose.Schema({
             type: Boolean,
             default: false
         }
+    },
+    usersLikedPost: {
+        type: [{type: mongoose.Schema.Types.ObjectId, ref: 'User_Model'}], // try this one
+        required: true,
+        unique: false
     }
 },
 {
