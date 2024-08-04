@@ -13,9 +13,19 @@ const postSchema = new mongoose.Schema({
     },
     // this has to be searched and match with the API
     // this name will ALSO bring the IMAGE of the plant from the API
-    plantName: {
-        type: String, // aided with API
-        required: true
+    plantInfo: {
+        id: {
+            type: Number,
+            required: false
+        },
+        common_name: {
+            type: String,
+            required: false
+        },
+        scientific_name: {
+            type: String,
+            required: false
+        }
     }, 
     //
     description: {

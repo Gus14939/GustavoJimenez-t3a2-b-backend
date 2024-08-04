@@ -41,7 +41,7 @@ async function seedPosts(userData) {
         return {
             postCreator: userData[randomUserData_id].id,
             title: post.title,
-            plantName: post.plantName,
+            plantInfo: post.plantInfo,
             description: post.description,
             category: post.category,
             usersLikedPost: userData[randomUserData_username].id, // not required
