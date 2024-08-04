@@ -34,7 +34,7 @@ dbApp.get("/", (req, res) => {
 
 // profile
 const userRouter = require("./controllers/UserRouter.js");
-dbApp.use("/profiles", userRouter);
+dbApp.use("/profile", userRouter);
 
 // post
 const postRouter = require("./controllers/PostRouter.js");

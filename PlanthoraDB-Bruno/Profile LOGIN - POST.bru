@@ -1,0 +1,19 @@
+meta {
+  name: Profile LOGIN - POST
+  type: http
+  seq: 11
+}
+
+post {
+  url: http://localhost:3333/profile/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "Gussio",
+    "password": "123456"
+  }
+  
+}
