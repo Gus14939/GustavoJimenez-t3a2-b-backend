@@ -56,31 +56,39 @@ async function seedPosts(userData) {
 }
 // To be fair, this block below is with chatgpt... Hey, before this point I fixed things I thought I couldn't. I was having circular dependencies issues and couldn't assign the postCreator from the user to the post... 
 // This one was just to complete the default database users and posts :D
-async function updateUserPostHistory() {
+async function updateUserPostHistoryAndLikedPosts() {
     try {
-        // Retrieve all users and posts
+        
         const users = await userModel.find({});
         const posts = await postModel.find({});
 
-        // Create a map to group posts by their postCreator
         const userPostsMap = {};
+        const userLikedPostsMap = {};
+
         posts.forEach(post => {
             if (!userPostsMap[post.postCreator]) {
                 userPostsMap[post.postCreator] = [];
             }
             userPostsMap[post.postCreator].push(post._id);
+
+            post.usersLikedPost.forEach(userId => {
+                if (!userLikedPostsMap[userId]) {
+                    userLikedPostsMap[userId] = [];
+                }
+                userLikedPostsMap[userId].push(post._id);
+            });
         });
 
-        // Update each user with their corresponding posts
         const updatePromises = users.map(user => {
             const postHistory = userPostsMap[user._id] || [];
-            return userModel.updateOne({ _id: user._id }, { postHistory });
+            const postsLiked = userLikedPostsMap[user._id] || [];
+            return userModel.updateOne({ _id: user._id }, { postHistory, postsLiked });
         });
 
         await Promise.all(updatePromises);
-        console.log('User post histories have been updated.');
+        console.log('User post histories and liked posts have been updated.');
     } catch (error) {
-        console.error('Error updating user post histories:', error);
+        console.error('Error updating user post histories and liked posts:', error);
     }
 }
 
@@ -99,7 +107,7 @@ async function seed(){
     vallidateJWT(newJWT);
 
     // Update postHistory for each user
-    await updateUserPostHistory();
+    await updateUserPostHistoryAndLikedPosts();
 
     console.log("All Data seeded");
     // disconnect database

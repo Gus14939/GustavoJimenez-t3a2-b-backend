@@ -59,8 +59,8 @@ async function updateUserPostHistoryAndLikedPosts() {
 
         const updatePromises = users.map(user => {
             const postHistory = userPostsMap[user._id] || [];
-            const likedPosts = userLikedPostsMap[user._id] || [];
-            return userModel.updateOne({ _id: user._id }, { postHistory, likedPosts });
+            const postsLiked = userLikedPostsMap[user._id] || [];
+            return userModel.updateOne({ _id: user._id }, { postHistory, postsLiked });
         });
 
         await Promise.all(updatePromises);
