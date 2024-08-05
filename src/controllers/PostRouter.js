@@ -6,8 +6,10 @@ const postRouter = express.Router();
 // READ
 postRouter.get("/", async (req, res) => {
     let result = await  postModel.find({})
-                        .populate("postCreator", "username")
-                        .populate("usersLikedPost", "username");
+                        .populate([
+                            { path: "postCreator", select: "username" },
+                            { path: "usersLikedPost", select: "username" }
+                        ]);
     
     console.log(result)
     res.json({
@@ -25,7 +27,7 @@ postRouter.get("/:id", async (req, res) => {
     });
 });
 // CREATE
-postRouter.post("/:id", async (req, res, next) => {
+postRouter.post("/", async (req, res, next) => {
     let result = await postModel.create(req.body).catch(error => {
         error.status = 400;
         return error;
