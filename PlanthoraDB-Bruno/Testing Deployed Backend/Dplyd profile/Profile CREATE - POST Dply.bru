@@ -1,0 +1,27 @@
+meta {
+  name: Profile CREATE - POST Dply
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://gustavojimenez-t3a2-b-backend.onrender.com/profile/signup
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Testing deployed - Gus",
+    "lastname": "Jimo",
+    "username": "Gussio",
+    "email": "Gus@email.com",
+    "password": "12345",
+    "address": {
+        "suburb": "Neutral bay",
+        "postcode": 2089
+    },
+    "favouritePlant": "Monstera"
+  }
+  
+}

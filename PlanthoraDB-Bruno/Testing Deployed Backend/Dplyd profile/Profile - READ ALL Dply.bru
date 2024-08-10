@@ -1,0 +1,27 @@
+meta {
+  name: Profile - READ ALL Dply
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://gustavojimenez-t3a2-b-backend.onrender.com/profile/all
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Gus",
+    "lastname": "Jimo",
+    "username": "Gussio",
+    "email": "Gus@email.com",
+    "password": "123456",
+    "address": {
+        "suburb": "Neutral bay",
+        "postcode": 2089
+    },
+    "favouritePlant": "Monstera"
+  }
+  
+}

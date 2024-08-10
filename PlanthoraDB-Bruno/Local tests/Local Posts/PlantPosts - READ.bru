@@ -1,0 +1,25 @@
+meta {
+  name: PlantPosts - READ
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3333/posts/postDetails/66b5a68b27ebf171b61aa6fe
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "title": "I want to swap my Monstera",
+    "plantName": "Monstera deliciosa Liebm",
+    "description": "I have too many Monsteras at home, I'd like to swap it for any kind of mid-size cactus",
+    "category": {
+        "free": false,
+        "swap": true,
+        "wanted": false
+    }
+  }
+  
+}

@@ -1,0 +1,25 @@
+meta {
+  name: Profile - DELETE Dply
+  type: http
+  seq: 3
+}
+
+delete {
+  url: http://gustavojimenez-t3a2-b-backend.onrender.com/profile/66b7591deb1929f8500ef141
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Gustavo",
+    "lastname": "Jimenez",
+    "password": "12345",
+    "address": {
+        "suburb": "Neutral bay",
+        "postcode": 2089
+    },
+    "favouritePlant": "Pothos"
+  }
+  
+}

@@ -1,11 +1,11 @@
 meta {
-  name: PlantPosts - CREATE
+  name: PlantPosts - UPDATE
   type: http
-  seq: 3
+  seq: 2
 }
 
-post {
-  url: http://localhost:3333/posts/postYourPlant
+patch {
+  url: http://localhost:3333/posts/66b33728dc78a09a77e2640f
   body: json
   auth: none
 }
@@ -20,7 +20,7 @@ body:json {
           "common_name": "golden pothos",
           "scientific_name": "Epipremnum aureum"
         },
-    "description": "I have too many Monsteras at home, I'd like to swap it for any kind of mid-size cactus",
+    "description": "I have a pothos that needs caring",
     "category": {
         "free": true,
         "swap": false,

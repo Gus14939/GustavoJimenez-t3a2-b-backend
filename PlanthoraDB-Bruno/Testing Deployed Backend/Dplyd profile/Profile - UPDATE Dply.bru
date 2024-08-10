@@ -1,0 +1,23 @@
+meta {
+  name: Profile - UPDATE Dply
+  type: http
+  seq: 2
+}
+
+patch {
+  url: http://gustavojimenez-t3a2-b-backend.onrender.com/profile/66b7630992b7c013099e9b10
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  
+    "address": {
+        "suburb": "cremorne",
+        "postcode": 2090
+    },
+    "favouritePlant": "Pothos"
+  }
+  
+}
