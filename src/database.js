@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 async function dbConnect(){
-    let dbURL = process.env.DATABASE_URL || "mongodb://localhost:27017/planthoraDB";
+    let dbURL = process.env.DATABASE_URL || process.env.DATABASE_LOCAL_URL;
     await mongoose.connect(dbURL);
     console.log(":: DB Connected ::");
 };
