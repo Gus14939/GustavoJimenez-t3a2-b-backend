@@ -59,7 +59,7 @@ dbApp.get("*", (req, res) => {
 // Server Crash
 dbApp.use((error, req, res, next) => {
     res.status(error.status || 500).json({
-        message: "An error has occured!",
+        message: "An error has occurred!",
         error: error.message
     });
 });

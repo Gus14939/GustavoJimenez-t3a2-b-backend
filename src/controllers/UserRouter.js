@@ -59,7 +59,7 @@ userRouter.post("/login", async (req, res, next) => {
         if (!matched) {
             return res.status(401).json({ message: "Wrong Password" });
         } else {
-            return res.status(200).json({ message:"well done buddy!" })
+            return res.status(200).json({ message:"Log in successful!" })
         }
 
         // JWT TOKEN
