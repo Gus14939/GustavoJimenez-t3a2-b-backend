@@ -30,6 +30,7 @@ userRouter.get("/:id", async (req, res) => {
 userRouter.post("/signup", async (req, res, next) => {
     let result = await userModel.create(req.body).catch(error => {
         error.status = 400;
+        // error.message = "this is a test"
         return error;
     });
 
@@ -42,7 +43,8 @@ userRouter.post("/signup", async (req, res, next) => {
         data: result
     });
 });
-// LOGING
+
+// LOGIN
 userRouter.post("/login", async (req, res, next) => {
     const { username, password } = req.body;
 

@@ -5,21 +5,25 @@ meta {
 }
 
 post {
-  url: http://localhost:3333/posts/66a4d8b279b592403dd407d4
+  url: http://localhost:3333/posts/postYourPlant
   body: json
   auth: none
 }
 
 body:json {
   {
-     "user": "66a4d8b279b592403dd407d4",
-    "username": "Gussio",
-    "title": "I want to swap my Monstera",
-    "plantName": "Monstera deliciosa Liebm",
+     "postCreator": "66b32c2c49b0872456f5118e",
+    "title": "I want to donate my Golden Pothos",
+    "plantName": "golden pothos",
+    "plantInfo": {
+          "id": 2773,
+          "common_name": "golden pothos",
+          "scientific_name": "Epipremnum aureum"
+        },
     "description": "I have too many Monsteras at home, I'd like to swap it for any kind of mid-size cactus",
     "category": {
-        "free": false,
-        "swap": true,
+        "free": true,
+        "swap": false,
         "wanted": false
     }
   }

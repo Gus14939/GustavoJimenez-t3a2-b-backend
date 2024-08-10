@@ -9,17 +9,6 @@ dotenv.config();
 const dbApp = express();
 
 
-// Check cors when interacting with the front-end
-
-const cors = require('cors');
-var corsOptions = {
-    origin: "*",
-    // origin: ["http://localhost:3000", "https://deployedApp.com"],
-    optionsSuccessStatus: 200
-}
-dbApp.use(cors(corsOptions));
-
-
 // API request data using json
 dbApp.use(express.json());
 dbApp.use(express.urlencoded({extended: true}));

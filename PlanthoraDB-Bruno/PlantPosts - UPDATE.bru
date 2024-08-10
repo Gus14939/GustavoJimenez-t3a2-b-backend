@@ -5,19 +5,25 @@ meta {
 }
 
 patch {
-  url: http://localhost:3333/posts/66a4da0079b592403dd407dd
+  url: http://localhost:3333/posts/66b33728dc78a09a77e2640f
   body: json
   auth: none
 }
 
 body:json {
   {
-    "title": "I want to swap my Monsterasss",
-    "plantName": "Monstera deliciosa Liebm",
-    "description": "I have too many Monsteras at home.",
+     "postCreator": "66b32c2c49b0872456f5118e",
+    "title": "I want to donate my Golden Pothos",
+    "plantName": "golden pothos",
+    "plantInfo": {
+          "id": 2773,
+          "common_name": "golden pothos",
+          "scientific_name": "Epipremnum aureum"
+        },
+    "description": "I have a pothos that needs caring",
     "category": {
-        "free": false,
-        "swap": true,
+        "free": true,
+        "swap": false,
         "wanted": false
     }
   }

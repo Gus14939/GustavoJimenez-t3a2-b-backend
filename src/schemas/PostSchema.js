@@ -4,33 +4,34 @@ const postSchema = new mongoose.Schema({
     postCreator: {
         // type: {type: mongoose.Schema.Types.ObjectId, ref: 'User_Model'}, this one breaks if no []
         type: mongoose.Schema.Types.ObjectId, ref: 'User_Model', // this one is correct
-        required: true,
+        required: false,
         unique: false // for a user to create more than one post. unique: needs to be false
     },
     title: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     // this has to be searched and match with the API
     // this name will ALSO bring the IMAGE of the plant from the API
+
+    plantName: {
+        type: String,
+        required: true,
+        unique: true
+    },
     plantInfo: {
         id: {
             type: Number,
-            required: false
-        },
-        common_name: {
-            type: String,
-            required: false
-        },
-        scientific_name: {
-            type: String,
-            required: false
+            required: false,
+            unique:false
         }
     }, 
     //
     description: {
         type: String,
-        required: true
+        required: true,
+        unique:false
     },
     category: {
         free: {

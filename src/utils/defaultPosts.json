@@ -1,10 +1,9 @@
 [
     {
         "title": "I want to swap my Monstera",
+        "plantName": "Swiss cheese plant",
         "plantInfo": {
-            "id": 5257,
-            "common_name": "Swiss cheese plant",
-            "scientific_name": "Monstera deliciosa"
+            "id": 5257
         },
         "description": "I have too many Monsteras at home, I'd like to swap it for any kind of mid-size cactus.",
         "category": {
@@ -15,10 +14,9 @@
     },
     {
         "title": "Free Aloe Vera Plant",
+        "plantName": "aloe",
         "plantInfo": {
-            "id": 728,
-            "common_name": "aloe",
-            "scientific_name": "Aloe vera"
+            "id": 728
         },
         "description": "Giving away a healthy Aloe Vera plant. Come pick it up!",
         "category": {
@@ -28,13 +26,12 @@
         }
     },
     {
-        "title": "Looking to Swap Succulents",
+        "title": "Looking to Swap Succulents, I offer Monstera",
+        "plantName": "Swiss cheese plant",
         "plantInfo": {
-            "id": 606,
-            "common_name": "American century plant",
-            "scientific_name": "Agave americana"
+            "id": 5257
         },
-        "description": "Interested in swapping succulents. Have a variety to offer!",
+        "description": "Interested in swapping succulents. I only have this big Monstera",
         "category": {
             "free": false,
             "swap": true,
@@ -42,13 +39,12 @@
         }
     },
     {
-        "title": "Wanted: Rare Ferns",
+        "title": "Wanted: Monstera",
+        "plantName": "Swiss cheese plant",
         "plantInfo": {
-            "id": 5465,
-            "common_name": "Boston fern",
-            "scientific_name": "Nephrolepis exaltata"
+            "id": 5257
         },
-        "description": "Looking to acquire rare ferns for my collection. Let me know if you have any to swap or sell.",
+        "description": "Looking to acquire small monstera for my collection. Let me know if you have any to swap or even sell.",
         "category": {
             "free": false,
             "swap": false,
@@ -57,10 +53,9 @@
     },
     {
         "title": "Free Spider Plant",
+        "plantName": "spider plant",
         "plantInfo": {
-            "id": 1846,
-            "common_name": "spider plant",
-            "scientific_name": "Chlorophytum 'Bonnie'"
+            "id": 1846
         },
         "description": "Giving away a healthy Spider Plant. It's easy to care for and perfect for beginners.",
         "category": {
@@ -71,10 +66,9 @@
     },
     {
         "title": "Swap My Snake Plant",
+        "plantName": "mother-in-law's tongue",
         "plantInfo": {
-            "id": 7166,
-            "common_name": "mother-in-law's tongue",
-            "scientific_name": "Sansevieria kirkii 'Silver Blue'"
+            "id": 7166
         },
         "description": "Looking to swap my Snake Plant for another interesting indoor plant.",
         "category": {
@@ -85,10 +79,9 @@
     },
     {
         "title": "Wanted: Rare Cacti",
+        "plantName": "Christmas cactus",
         "plantInfo": {
-            "id": 7265,
-            "common_name": "Christmas cactus",
-            "scientific_name": "Schlumbergera buckleyi"
+            "id": 7265
         },
         "description": "Seeking rare cacti for my collection. Open to swaps or purchase.",
         "category": {
@@ -99,10 +92,9 @@
     },
     {
         "title": "Free Succulent Cuttings",
+        "plantName": "jade plant",
         "plantInfo": {
-            "id": 2193,
-            "common_name": "jade plant",
-            "scientific_name": "Crassula ovata"
+            "id": 2193
         },
         "description": "Have plenty of succulent cuttings to give away. Perfect for propagation.",
         "category": {
@@ -113,10 +105,9 @@
     },
     {
         "title": "Swap My Peace Lily",
+        "plantName": "peace lily",
         "plantInfo": {
-            "id": 7463,
-            "common_name": "peace lily",
-            "scientific_name": "Spathiphyllum (group)"
+            "id": 7463
         },
         "description": "Wanting to swap my Peace Lily for a different indoor plant. Let me know if interested!",
         "category": {
@@ -127,10 +118,9 @@
     },
     {
         "title": "Wanted: Rare Orchids",
+        "plantName": "Chinese ground orchid",
         "plantInfo": {
-            "id": 1301,
-            "common_name": "Chinese ground orchid",
-            "scientific_name": "Bletilla striata f. gebina"
+            "id": 1301
         },
         "description": "Searching for rare orchids to add to my collection. Let’s discuss a swap or sale.",
         "category": {

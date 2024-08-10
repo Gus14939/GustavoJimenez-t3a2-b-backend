@@ -7,11 +7,13 @@ const userSchema = new mongoose.Schema({
 
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: false
     },
     lastname: {
         type: String,
-        required: true
+        required: true,
+        unique: false
     },
     username: {
         type: String,
@@ -32,11 +34,13 @@ const userSchema = new mongoose.Schema({
         // I may just need the postcode/suburb to give an idea of the location, the user may want to personally share his/her address in personal messages
         suburb:  {
             type: String,
-            required: true
+            required: true,
+            unique: false
         },
         postcode:  {
             type: Number,
-            required: true
+            required: true,
+            unique: false
         }
     },
     favouritePlant: {

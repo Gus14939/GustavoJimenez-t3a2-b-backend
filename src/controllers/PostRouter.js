@@ -4,7 +4,7 @@ const { postModel } = require("../models/models");
 const postRouter = express.Router();
 
 // READ
-postRouter.get("/", async (req, res) => {
+postRouter.get("/all", async (req, res) => {
     let result = await  postModel.find({})
                         .populate([
                             { path: "postCreator", select: "username" },
@@ -18,7 +18,7 @@ postRouter.get("/", async (req, res) => {
     });
 });
 
-postRouter.get("/:id", async (req, res) => {
+postRouter.get("/postDetails/:id", async (req, res) => {
     let result = await postModel.findById(req.params.id);
 
     res.json({
@@ -27,7 +27,7 @@ postRouter.get("/:id", async (req, res) => {
     });
 });
 // CREATE
-postRouter.post("/", async (req, res, next) => {
+postRouter.post("/postYourPlant", async (req, res, next) => {
     let result = await postModel.create(req.body).catch(error => {
         error.status = 400;
         return error;
